@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="main">
+        <form action="" method="POST" class="form" id="form-1">
+            <h3 class="heading">Thành viên đăng ký</h3>
+            <p class="desc">Cùng nhau học lập trình miễn phí tại F8 ❤️</p>
+
+            <div class="spacer"></div>
+
+            <div class="form-group">
+                <label for="fullname" class="form-label">Tên đầy đủ</label>
+                <input type="text" name="fullname" id="fullname" class="form-control" placeholder="VD: Sơn Đặng">
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="text" name="email" id="email" class="form-control" placeholder="VD: email@domain.com">
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="form-label">Mật khẩu</label>
+                <input type="password" name="password" id="password" class="form-control" placeholder="Nhập mật khẩu">
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="password-confirmation" class="form-label">Nhập lại mật khẩu</label>
+                <input type="password" name="password-confirmation" id="password-confirmation" class="form-control" placeholder="Nhập lại mật khẩu">
+                <span class="form-message"></span>
+            </div>
+
+            <button class="form-submit">Đăng ký</button>
+        </form>
+    </div>
+
+    <script src="./assets/js/main.js"></script>
+    <script>
+        Validator({
+            form: '#form-1',
+            errorSelector: '.form-message',
+            formGroupSelector: '.form-group',
+            rules: [
+                Validator.isRequired('#fullname'),
+                Validator.isRequired('#email'),
+                Validator.isEmail('#email'),
+                Validator.isRequired('#password'),
+                Validator.isRequired('#password-confirmation'),
+                Validator.isComfirmed('#password-confirmation', () => {
+                    return document.querySelector(`#form-1 #password`).value
+                }),
+            ],
+            onSubmit: function(data) {
+                console.log(data)
+            }
+        })
+    </script>
+</body>
+</html>

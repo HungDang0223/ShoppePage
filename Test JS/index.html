@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="shortcut icon" href="#">
+
+    <style>
+        .input1 ~ ul {
+            display: none;
+        }
+        .input1:focus ~ ul {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="products-list">
+        <div class="product">
+            <h3 class="title">Khóa học HTML & CSS Pro</h3>
+            <p class="description">Cung cấp kiến thức từ cơ bản đến nâng cao về HTML & CSS</p>
+            <button class="cta-btn">Mua ngay</button>    
+        <div>
+        <div class="product">
+            <h3 class="title">Khóa học Javascript Pro</h3>
+            <p class="description">Cung cấp kiến thức từ cơ bản đến nâng cao về Javascript</p>
+            <button class="cta-btn">Mua ngay</button>    
+        <div>
+    </div>
+    <!-- ClasList Property -->
+    <div class="box box-1 box-2">
+        <h1>ClassList Property</h1>
+    </div>
+    <input type="text" class="input1"> <br>
+    <input type="checkbox" class="checkboxShow"> <br>
+    <input type="text" class="input2">
+    <ul>
+        <li>Javascript</li>
+        <li>PHP</li>
+        <li>Dart</li>
+    </ul>
+    <div class="" onclick="console.log('DIV')">
+        DIV
+        <button class="click">click me!</button>
+    </div>
+    <input type="text" id="firstName" placeholder="Nhap first name">
+    <input type="text" id="lastName" placeholder="Nhap last name">
+    <button onclick="displayFullName()" id="showFullName">Show full name</button>
+    <!-- <button id="showFullName">Show full name</button> -->
+    <div id="fullName"></div>
+</body>
+<script src="./main.js"></script>
+</html>
